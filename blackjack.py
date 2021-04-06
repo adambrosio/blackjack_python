@@ -46,3 +46,10 @@ test_deck = Deck()
 print(test_deck)
 '''
 
+class Hand:
+
+    def __init__(self):
+        # Empty list similar to Deck class
+        self.card = []
+        self.value = 0
+        self.aces = 0
