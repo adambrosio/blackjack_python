@@ -50,23 +50,26 @@ class Hand:
 
     def __init__(self):
         # Empty list similar to Deck class
-        self.card = []
+        self.cards = []
         self.value = 0
         self.aces = 0
 
     def add_card(self,card):
-        self.card.append(card)
+        self.cards.append(card)
         self.value += values[card.rank]
 
     def adjust_for_ace(self):
         pass
 
 '''
-Test to see if two card are being added to player's hand
+# Test to see if two card are being added to player's hand
 test_deck = Deck()
 test_deck.shuffle()
 test_player = Hand()
 test_player.add_card(test_deck.deal())
 test_player.add_card(test_deck.deal())
 print(test_player.value)
+
+for card in test_player.cards:
+    print(card)
 '''
