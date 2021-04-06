@@ -13,7 +13,7 @@ class Card:
         self.rank = rank
 
     def __str__(self):
-        return self.rank + 'of' + self.suit
+        return self.rank + ' of ' + self.suit
 
 # Deck class
 class Deck:
@@ -30,7 +30,7 @@ class Deck:
         deck_comp = ''
         for card in self.deck:
             deck_comp += '\n ' + card.__str__()
-            return 'The deck has:' + deck_comp
+        return 'The deck has: ' + deck_comp
 
     def shuffle(self):
         random.shuffle(self.deck)
@@ -40,3 +40,5 @@ class Deck:
         single_card = self.deck.pop()
         return single_card
 
+test_deck = Deck()
+print(test_deck)
