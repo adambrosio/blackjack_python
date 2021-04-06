@@ -31,3 +31,11 @@ class Deck:
         for card in self.deck:
             deck_comp += '\n ' + card.__str__()
             return 'The deck has:' + deck_comp
+
+    def shuffle(self):
+        random.shuffle(self.deck)
+
+    def deal(self):
+        # "Pops" a card off the end of the list
+        single_card = self.deck.pop()
+        return single_card
