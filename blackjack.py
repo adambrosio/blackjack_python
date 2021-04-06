@@ -92,7 +92,7 @@ class Chips:
 
     def lose_bet(self):
         self.total -= self.bet
-        
+
 # Function for taking bets
 def take_bet(chips):
 
@@ -106,3 +106,8 @@ def take_bet(chips):
                 print("Sorry, your bet can't exceed",chips.total)
             else:
                 break
+
+# Hit function
+def hit(deck,hand):
+    hand.add_card(deck.deal())
+    hand.adjust_for_ace()
