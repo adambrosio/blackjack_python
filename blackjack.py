@@ -40,5 +40,9 @@ class Deck:
         single_card = self.deck.pop()
         return single_card
 
+'''
+Testing full deck
 test_deck = Deck()
 print(test_deck)
+'''
+
