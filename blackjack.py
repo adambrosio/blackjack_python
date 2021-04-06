@@ -66,6 +66,7 @@ class Hand:
             self.value -= 10
             self.aces -= 1
 
+
 '''
 # Test to see if two card are being added to player's hand
 test_deck = Deck()
@@ -78,3 +79,16 @@ print(test_player.value)
 for card in test_player.cards:
     print(card)
 '''
+
+class Chips:
+
+    def __init__(self):
+
+        self.total = int(input('Please enter how many chips would you like to being with: '))
+        self.bet = 0
+
+    def win_bet(self):
+        self.total += self.bet
+
+    def lose_bet(self):
+        self.total -= self.bet
