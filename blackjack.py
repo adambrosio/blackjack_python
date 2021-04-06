@@ -9,8 +9,8 @@ playing = True
 class Card:
 
     def __init__(self,suit,rank):
-        suit = self.suit
-        rank = self.rank
+        self.suit = suit
+        self.rank = rank
 
     def __str__(self):
         return self.rank + 'of' + self.suit
@@ -39,3 +39,4 @@ class Deck:
         # "Pops" a card off the end of the list
         single_card = self.deck.pop()
         return single_card
+
