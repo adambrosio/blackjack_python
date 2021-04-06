@@ -61,3 +61,12 @@ class Hand:
     def adjust_for_ace(self):
         pass
 
+'''
+Test to see if two card are being added to player's hand
+test_deck = Deck()
+test_deck.shuffle()
+test_player = Hand()
+test_player.add_card(test_deck.deal())
+test_player.add_card(test_deck.deal())
+print(test_player.value)
+'''
