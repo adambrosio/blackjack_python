@@ -198,3 +198,38 @@ while True:
     take_bet(player_chips)
     # Show cards but keep dealer's at index 1 hidden
     show_some(player_hand,dealer_hand)
+
+    while playing:
+
+        hit_or_stand(deck,player_hand)
+
+        show_some(player_hand,dealer_hand)
+
+        if player_hand.value > 21:
+            player_busts(player_hand,dealer_hand,player_chips)
+            break
+    
+    if player_hand.value <= 21:
+        while dealer_hand.value < 17:
+            hit(deck,dealer_hand)
+
+        show_all(player_hand,dealer_hand)
+
+        if dealer_hand.value < 21:
+            dealer_busts(player_hand,dealer_hand,player_chips)
+        elif dealer_hand.value > 21:
+            dealer_wins(player_hand,dealer_hand,player_chips)
+        elif dealer_hand.value < player_hand.value:
+            player_wins(player_hand,dealer_hand,player_chips)
+        else:
+            push(player_hand,dealer_hand)
+
+    print(f"\n Player's total chips are at: {player_chips.total}")
+    new_game = input("Would you like to play again? Enter 'Y' or 'N': ")
+
+    if new_game[0].upper == 'Y':
+        playing = True
+        continue
+    else:
+        print('Thanks for playing!')
+        break
