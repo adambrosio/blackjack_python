@@ -155,16 +155,20 @@ def show_all(player,dealer):
         print(card)
 
 def player_busts(player,dealer,chips):
-    pass
+    print("Player bust!")
+    chips.lose_bet()
 
-def player_wins():
-    pass
+def player_wins(player,dealer,chips)):
+    print("Player wins!")
+    chips.win_bet()
 
-def dealer_busts():
-    pass
+def dealer_busts(player,dealer,chips)):
+    print("Dealer bust! Player wins!")
+    chips.win_bet()
 
-def dealer_wins():
-    pass
+def dealer_wins(player,dealer,chips)):
+    print("Dealer wins!")
+    chips.lose_bet()
 
-def push():
-    pass
+def push(player,dealer):
+    print("Push!")
