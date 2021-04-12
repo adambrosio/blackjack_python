@@ -84,8 +84,13 @@ class Chips:
 
     def __init__(self):
 
-        self.total = int(input('Please enter how many chips would you like to being with: '))
-        self.bet = 0
+        while True:
+            try:
+                self.total = int(input('Please enter how many chips would you like to begin with: '))
+                break
+            except ValueError:
+                print("Invalid entry. Please enter an integer: ")
+                self.bet = 0
 
     def win_bet(self):
         self.total += self.bet
@@ -133,24 +138,24 @@ def hit_or_stand(deck,hand):
 def show_some(player,dealer):
 
     # Show one of dealer's cards
-    print("\n Dealer's Hand: ")
+    print("\nDealer's Hand: ")
     print('First card hidden.')
     # Essentiall showing second card
     print(dealer.cards[1])
     # Show both cards from player's hand
-    print("\n Player's Hand: ")
+    print("\nPlayer's Hand: ")
     for card in player.cards:
         print(card)
 
 def show_all(player,dealer):
     # Show dealer full hand
-    print("\n Dealer's Hand: ")
+    print("\nDealer's Hand: ")
     for card in dealer.cards:
         print(card)
     # Display value of cards
     print(f"Value of Dealer's hand is: {dealer.value} ")
     # Show player full hand
-    print(f"\n Player's hand: {player.value}")
+    print(f"\nPlayer's hand: {player.value}")
     for card in player.cards:
         print(card)
 
@@ -202,7 +207,6 @@ while True:
     while playing:
 
         hit_or_stand(deck,player_hand)
-
         show_some(player_hand,dealer_hand)
 
         if player_hand.value > 21:
@@ -215,19 +219,19 @@ while True:
 
         show_all(player_hand,dealer_hand)
 
-        if dealer_hand.value < 21:
+        if dealer_hand.value > 21:
             dealer_busts(player_hand,dealer_hand,player_chips)
-        elif dealer_hand.value > 21:
+        elif dealer_hand.value > player_hand.value:
             dealer_wins(player_hand,dealer_hand,player_chips)
         elif dealer_hand.value < player_hand.value:
             player_wins(player_hand,dealer_hand,player_chips)
         else:
             push(player_hand,dealer_hand)
 
-    print(f"\n Player's total chips are at: {player_chips.total}")
+    print(f"\nPlayer's total chips are at: {player_chips.total}")
     new_game = input("Would you like to play again? Enter 'Y' or 'N': ")
 
-    if new_game[0].upper == 'Y':
+    if new_game[0].upper() == 'Y':
         playing = True
         continue
     else:
