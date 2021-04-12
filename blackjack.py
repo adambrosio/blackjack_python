@@ -62,6 +62,8 @@ class Hand:
             self.aces += 1
 
     def adjust_for_ace(self):
+        # If total value > 21 and still have an ace
+        # Then change Aceto 1 instead of an 11
         while self.value > 21 and self.aces:
             self.value -= 10
             self.aces -= 1
@@ -89,7 +91,7 @@ class Chips:
                 self.total = int(input('Please enter how many chips would you like to begin with: '))
                 break
             except ValueError:
-                print("Invalid entry. Please enter an integer: ")
+                print('Invalid entry. Please enter an integer: ')
                 self.bet = 0
 
     def win_bet(self):
