@@ -191,3 +191,10 @@ while True:
     dealer_hand = Hand()
     dealer_hand.add_card(deck.deal())
     dealer_hand.add_card(deck.deal())
+
+    # Instance of Chips class
+    player_chips = Chips()
+    # Promt player for bet
+    take_bet(player_chips)
+    # Show cards but keep dealer's at index 1 hidden
+    show_some(player_hand,dealer_hand)
