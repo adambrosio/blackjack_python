@@ -158,15 +158,15 @@ def player_busts(player,dealer,chips):
     print("Player bust!")
     chips.lose_bet()
 
-def player_wins(player,dealer,chips)):
+def player_wins(player,dealer,chips):
     print("Player wins!")
     chips.win_bet()
 
-def dealer_busts(player,dealer,chips)):
+def dealer_busts(player,dealer,chips):
     print("Dealer bust! Player wins!")
     chips.win_bet()
 
-def dealer_wins(player,dealer,chips)):
+def dealer_wins(player,dealer,chips):
     print("Dealer wins!")
     chips.lose_bet()
 
