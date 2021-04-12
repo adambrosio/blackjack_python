@@ -172,3 +172,22 @@ def dealer_wins(player,dealer,chips):
 
 def push(player,dealer):
     print("Push!")
+
+# Full game logic
+while True:
+
+    print('Welcome to Python Blackjack!')
+    # Instance of Deck class
+    deck = Deck()
+    # Shuffle deck
+    deck.shuffle()
+
+    # Player opening hand using Hand class
+    player_hand = Hand()
+    player_hand.add_card(deck.deal())
+    player_hand.add_card(deck.deal())
+
+    # Dealer opening hand using Hand class
+    dealer_hand = Hand()
+    dealer_hand.add_card(deck.deal())
+    dealer_hand.add_card(deck.deal())
