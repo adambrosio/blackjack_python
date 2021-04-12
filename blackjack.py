@@ -81,7 +81,6 @@ for card in test_player.cards:
 
 class Chips:
     def __init__(self):
-
         while True:
             try:
                 self.total = int(input('Please enter how many chips would you like to begin with: '))
