@@ -7,7 +7,6 @@ values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
 playing = True
 # Card class
 class Card:
-
     def __init__(self,suit,rank):
         self.suit = suit
         self.rank = rank
@@ -17,7 +16,6 @@ class Card:
 
 # Deck class
 class Deck:
-
     def __init__(self):
         # Empty deck list
         self.deck = []
@@ -47,7 +45,6 @@ print(test_deck)
 '''
 
 class Hand:
-
     def __init__(self):
         # Empty list similar to Deck class
         self.cards = []
@@ -83,7 +80,6 @@ for card in test_player.cards:
 '''
 
 class Chips:
-
     def __init__(self):
 
         while True:
@@ -102,7 +98,6 @@ class Chips:
 
 # Function for taking bets
 def take_bet(chips):
-
     while True:
         try:
             chips.bet = int(input('How many chips would you like to bet? '))
@@ -138,7 +133,6 @@ def hit_or_stand(deck,hand):
         break
 
 def show_some(player,dealer):
-
     # Show one of dealer's cards
     print("\nDealer's Hand: ")
     print('First card hidden.')
@@ -182,7 +176,6 @@ def push(player,dealer):
 
 # Full game logic
 while True:
-
     print('Welcome to Python Blackjack!')
     # Instance of Deck class
     deck = Deck()
@@ -207,7 +200,6 @@ while True:
     show_some(player_hand,dealer_hand)
 
     while playing:
-
         hit_or_stand(deck,player_hand)
         show_some(player_hand,dealer_hand)
 
