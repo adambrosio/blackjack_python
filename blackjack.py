@@ -119,7 +119,7 @@ def hit_or_stand(deck,hand):
     global playing
 
     while True:
-        x = input("Hit or Stand? Enter H or S: ")
+        x = input("\nHit or Stand? Enter H or S: ")
 
         if x[0].upper() == 'H':
             hit(deck,hand)
@@ -134,7 +134,7 @@ def hit_or_stand(deck,hand):
 def show_some(player,dealer):
     # Show one of dealer's cards
     print("\nDealer's Hand: ")
-    print('First card hidden.')
+    print('Hidden card')
     # Essentiall showing second card
     print(dealer.cards[1])
     # Show both cards from player's hand
