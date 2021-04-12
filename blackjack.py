@@ -108,7 +108,7 @@ def take_bet(chips):
             print('Please enter an integer: ')
         else:
             if chips.bet > chips.total:
-                print("Sorry, your bet can't exceed",chips.total)
+                print(f"Sorry, your bet cannot exceed {chips.total}")
             else:
                 break
 
