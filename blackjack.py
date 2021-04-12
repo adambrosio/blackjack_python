@@ -100,7 +100,7 @@ def take_bet(chips):
         try:
             chips.bet = int(input('How many chips would you like to bet? '))
         except ValueError:
-            print('Please enter an integer')
+            print('Please enter an integer: ')
         else:
             if chips.bet > chips.total:
                 print("Sorry, your bet can't exceed",chips.total)
@@ -129,3 +129,27 @@ def hit_or_stand(deck,hand):
 
         else:
             print("Sorry invalid input. Please enter 'H' or 'S': ")
+
+def show_some(player,dealer):
+
+    # Show one of dealer's cards
+    print("\n Dealer's Hand: ")
+    print('First card hidden.')
+    # Essentiall showing second card
+    print(dealer.cards[1])
+    # Show both cards from player's hand
+    print("\n Player's Hand: ")
+    for card in player.cards:
+        print(card)
+
+def show_all(player,dealer):
+    # Show dealer full hand
+    print("\n Dealer's Hand: ")
+    for card in dealer.cards:
+        print(card)
+    # Display value of cards
+    print(f"Value of Dealer's hand is: {dealer.value} ")
+    # Show player full hand
+    print(f"\n Player's hand: {player.value}")
+    for card in player.cards:
+        print(card)
