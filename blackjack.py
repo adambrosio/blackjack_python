@@ -109,5 +109,6 @@ def take_bet(chips):
 
 # Hit function
 def hit(deck,hand):
-    hand.add_card(deck.deal())
+    single_card = deck.deal()
+    hand.add_card(single_card)
     hand.adjust_for_ace()
